@@ -1,15 +1,4 @@
-﻿/*
-* Сессия теперь создается в общей области видимости.
-* Будет "захватываться" тремя функциями
-* 
-* */ 
-let session = {
-    'startDate': new Date().toLocaleString(),
-    'userAgent': window.navigator.userAgent,
-    'userAge' : prompt("Пожалуста введите свой возраст!")
-}
-
-
+﻿
 /*
 * Вывод данных сессии в консоль
 * 
