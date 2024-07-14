@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 
 namespace LifeSpot
@@ -15,7 +16,14 @@ namespace LifeSpot
         /// <summary>
         ///  Маппинг CSS-файлов
         /// </summary>
-        
+        public static void MapJpg(IApplicationBuilder app)
+        {
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Static" , "JPG")),
+                RequestPath = "/Static/JPG"
+            });
+        }
         public static void MapCss(this IEndpointRouteBuilder builder)
         {
             var cssFiles = new[] { "index.css" };
@@ -113,6 +121,7 @@ namespace LifeSpot
                 endpoints.MapCss();
                 endpoints.MapJs();
                 endpoints.MapHtml();
+                EndpointMapper.MapJpg(app);
             });
         }
     }
