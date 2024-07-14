@@ -4,4 +4,16 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Static\JPG\1.jpg" />
+      <None Remove="Static\JPG\2.jpg" />
+      <None Remove="Static\JPG\3.jpg" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Static\JPG\1.jpg" />
+      <Resource Include="Static\JPG\2.jpg" />
+      <Resource Include="Static\JPG\3.jpg" />
+    </ItemGroup>
+
 </Project>
