@@ -4,4 +4,12 @@
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Static\CSS\slider.css" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Include="Static\CSS\slider.css" />
+    </ItemGroup>
+
 </Project>
