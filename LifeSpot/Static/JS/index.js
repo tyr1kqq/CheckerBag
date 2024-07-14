@@ -43,17 +43,17 @@ function handleSession(logger, checker) {
     }
 
     // Проверяем возраст и проставляем, если новый визит
-    if (window.sessionStorage.getItem("userAge") == null) {
-        let input = prompt("Пожалуйста, введите ваш возраст?");
-        window.sessionStorage.setItem("userAge", input)
+     // if (window.sessionStorage.getItem("userAge") == null) {
+       // let input = prompt("Пожалуйста, введите ваш возраст?");
+     // window.sessionStorage.setItem("userAge", input)
 
         /* Возраст отсутствовал в sessionStorage. Значит, это первый визит пользователя, и
          при прохождении проверки на возраст он увидит приветствие*/
-        checker(true)
-    } else {
+       // checker(true)
+    } // else {
 
         /* Пользователь заходит не первый раз, приветствие не показываем. */
-        checker(false)
+       // checker(false)
     }
 
     /* Вызываем переданную в качестве колл-бэка функцию логирования.
